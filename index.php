@@ -86,7 +86,7 @@
                                         </path>
                                     </pattern>
                                 </defs>
-                                <text text-anchor="middle" x="50" y="15" fill="url(#wave)" fill-opacity="1" class="liquid">Balaji </text>
+                                <text text-anchor="middle" x="50" y="15" fill="url(#wave)" fill-opacity="1" class="liquid">name 1 </text>
                             </svg>
                         </div>
 
@@ -101,7 +101,7 @@
                                         </path>
                                     </pattern>
                                 </defs>
-                                <text text-anchor="middle" x="50" y="15" fill="url(#wave)" fill-opacity="1" class="liquid">Roopa </text>
+                                <text text-anchor="middle" x="50" y="15" fill="url(#wave)" fill-opacity="1" class="liquid">name 2 </text>
                             </svg>
                         </div>
 
@@ -161,9 +161,9 @@
 
     <!-- watch_live -->
     <section class="feature" id="watch_live" style="padding:2% ;">
-        <div class="container" >
+        <div class="container">
             <div class="row">
-            <div class="col-lg-12 col-12 text-center mb-0" style="color:aliceblue;">
+                <div class="col-lg-12 col-12 text-center mb-0" style="color:aliceblue;">
                     <h1 data-aos="fade-up" data-aos-delay="200">Watch Live</h1>
                 </div>
                 <div class="col-lg-12 col-12 text-center mb-0 mt-0">
@@ -235,7 +235,7 @@
     <section class="schedule section" id="contact">
         <div class="container">
             <div class="row">
-            
+
                 <div class="col-lg-12 col-md-12 col-12">
                     <div class="poster_of_photogrpher" data-aos="zoom-out-down" data-aos-delay="200"><img src="photographer_posters/1.jpg" alt="Snow" width="100%" height="20%"></div>
                 </div>
@@ -246,29 +246,23 @@
 
 
     <!-- CONTACT -->
-    <section class="contact section" >
+    <section class="contact section">
         <div class="container">
             <div class="row">
 
                 <div class="ml-auto col-lg-5 col-md-6 col-12">
-                    <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200">Feel free to ask anything</h2>
-                    <form action="#" method="post" class="contact-form webform" data-aos="fade-up" data-aos-delay="400" role="form">
-                        <input type="text" class="form-control" name="cf-name" placeholder="Name">
+                <h2 class="mb-4" data-aos="fade-left" data-aos-delay="600">Contact <span>Us </span></h2>
+                    <p data-aos="fade-down" data-aos-delay="100"><i class="fa fa-phone mr-1"></i> 1234567890</p>
+                    <p data-aos="fade-up" data-aos-delay="400"><i class="fa fa-envelope mr-1"></i> photographer@gmail.com</p>
+                    <p data-aos="fade-right" data-aos-delay="700"><i class="fa fa-globe mr-1"></i> www.photographer.com</p>
+                    <h2 class="mb-4" data-aos="fade-left" data-aos-delay="600">Where you can <span>find us</span></h2>
+                    <p data-aos="fade-down" data-aos-delay="400"><i class="fa fa-map-marker mr-1"></i> 120-240 Rio de Janeiro - State of Rio de Janeiro, Brazil</p>
 
-                        <input type="email" class="form-control" name="cf-email" placeholder="Email">
-
-                        <textarea class="form-control" rows="5" name="cf-message" placeholder="Message"></textarea>
-
-                        <button type="submit" class="form-control" id="submit-button" name="submit">Send Message</button>
-                    </form>
                 </div>
 
                 <div class="mx-auto mt-4 mt-lg-0 mt-md-0 col-lg-5 col-md-6 col-12">
-                    <h2 class="mb-4" data-aos="fade-up" data-aos-delay="600">Where you can <span>find us</span></h2>
-
-                    <p data-aos="fade-up" data-aos-delay="800"><i class="fa fa-map-marker mr-1"></i> 120-240 Rio de Janeiro - State of Rio de Janeiro, Brazil</p>
-                    <div class="google-map" data-aos="fade-up" data-aos-delay="500">
-                        <iframe style="height: 250px;" src="https://maps.google.com/maps?q=Av.+Lúcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="1920" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    <div data-aos="fade-up" data-aos-delay="500">
+                        <iframe style="height: 350px;"  src="https://maps.google.com/maps?q=Av.+Lúcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="1920" allowfullscreen=""></iframe>
                     </div>
                 </div>
 
