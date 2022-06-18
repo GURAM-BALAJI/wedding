@@ -46,7 +46,7 @@
       
       <?php 
       if ($admin['invitation_view']) { ?>
-        <li><a href="../invitation/invitation.php"><i class="fa fa-snowflake-o"></i> <span>Invitation</span></a></li>
+        <li><a href="../invitation/invitation.php"><i class="fa fa-handshake-o"></i> <span>Invitation</span></a></li>
       <?php } ?>
 
       <?php 

@@ -44,13 +44,11 @@ include '../includes/header.php'; ?>
           unset($_SESSION['success']);
         }
         ?>
-        <?php if ($admin['users_view']) { ?>
-          <!-- /.row -->
-          <div class="row">
 
-
-
-            <!-- ./col -->
+        <!-- /.row -->
+        <div class="row">
+          <!-- ./col -->
+          <?php if ($admin['admin_view']) { ?>
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
               <div class="small-box bg-aqua">
@@ -77,12 +75,54 @@ include '../includes/header.php'; ?>
                 <a href="../admin/admin.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
-
-
-
-          </div>
+          <?php } ?>
+          <?php if ($admin['invitation_view']) { ?>
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-yellow">
+                <div class="inner">
+                  <?php
+                  $sql6 = "SELECT invitation_id from invitation Where invitation_deleted='0'";
+                  $query6 = $conn->prepare($sql6);;
+                  $query6->execute();
+                  $results6 = $query6->fetchAll(PDO::FETCH_OBJ);
+                  $query = $query6->rowCount();
+                  echo "<h3>" . $query . "</h3>";
+                  ?>
+                  <div class="stat-panel-title text-uppercase">Total Invitation's</div>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-handshake-o"></i>
+                </div>
+                <a href="../invitation/invitation.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          <?php } ?>
+          <?php if ($admin['photographer_view']) { ?>
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-green">
+                <div class="inner">
+                  <?php
+                  $sql6 = "SELECT photographer_id from photographer Where photographer_deleted='0'";
+                  $query6 = $conn->prepare($sql6);;
+                  $query6->execute();
+                  $results6 = $query6->fetchAll(PDO::FETCH_OBJ);
+                  $query = $query6->rowCount();
+                  echo "<h3>" . $query . "</h3>";
+                  ?>
+                  <div class="stat-panel-title text-uppercase">Total Photographer's</div>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-camera"></i>
+                </div>
+                <a href="../photographer/photographer.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          <?php } ?>
+        </div>
     </div>
-  <?php } ?>
+
   </div>
   </section>
   </div>

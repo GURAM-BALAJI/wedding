@@ -51,16 +51,6 @@
                 </tr>
                 <tr>
                     <td> </td>
-                    <td> USER </td>
-                    <td style="text-align: center;"> <input type="checkbox" name="invitation_view" <?php if ($row['invitation_view']) echo "checked"; ?>> </td>
-                    <td style="text-align: center;"> <input type="checkbox" name="invitation_create" <?php if ($row['invitation_create']) echo "checked"; ?>> </td>
-                    <td style="text-align: center;"> <input type="checkbox" name="invitation_edit" <?php if ($row['invitation_edit']) echo "checked"; ?>> </td>
-                    <td style="text-align: center;"> <input type="checkbox" name="invitation_del" <?php if ($row['invitation_del']) echo "checked"; ?>> </td>
-                    <td> </td>
-                     <td> </td>
-                </tr>
-                <tr>
-                    <td> </td>
                     <td> ADMIN </td>
                     <td style="text-align: center;"> <input type="checkbox" name="admin_view" <?php if ($row['admin_view']) echo "checked"; ?>> </td>
                     <td style="text-align: center;"> <input type="checkbox" name="admin_create" <?php if ($row['admin_create']) echo "checked"; ?>> </td>
@@ -69,6 +59,17 @@
                     <td style="text-align: center;"> <input type="checkbox" name="admin_special" <?php if ($row['admin_special']) echo "checked"; ?>> </td>
                     <td> </td>
                 </tr>
+                <tr>
+                    <td> </td>
+                    <td> INVITATION </td>
+                    <td style="text-align: center;"> <input type="checkbox" name="invitation_view" <?php if ($row['invitation_view']) echo "checked"; ?>> </td>
+                    <td style="text-align: center;"> <input type="checkbox" name="invitation_create" <?php if ($row['invitation_create']) echo "checked"; ?>> </td>
+                    <td style="text-align: center;"> <input type="checkbox" name="invitation_edit" <?php if ($row['invitation_edit']) echo "checked"; ?>> </td>
+                    <td style="text-align: center;"> <input type="checkbox" name="invitation_del" <?php if ($row['invitation_del']) echo "checked"; ?>> </td>
+                    <td> </td>
+                     <td> </td>
+                </tr>
+           
 
                 <tr>
                     <td> </td>
