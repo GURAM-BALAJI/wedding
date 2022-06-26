@@ -8,19 +8,19 @@
 }
 
 .display-time {
-  color: rgb(255, 255, 255);
+  color: rgb(255, 0, 0);
+  text-decoration-color: #171819;
   font-size: 3rem;
   text-align: center;
   font-weight: bold;
-  border: 5px solid #333333;
+  border: 5px solid #ff0000;
   padding: 5px 10px;
   border-radius: 15px;
   transition: ease-in-out 0.1s;
-  background: #ff0000d0;
 }
 
 .display-time:hover {
-  box-shadow: 0 0 30px#04230d;
+  box-shadow: 0 0 30px#42e570;
   color: #272727;
   cursor: pointer;
 }

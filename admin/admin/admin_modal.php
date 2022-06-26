@@ -161,7 +161,6 @@
     </div>
 </div> 
 
-
 <!-- Activate -->
 <div class="modal fade" id="activate">
     <div class="modal-dialog">
@@ -187,7 +186,6 @@
         </div>
     </div>
 </div> 
-
 
      <!-- Not Activate -->
 <div class="modal fade" id="not_activate">

@@ -6,14 +6,18 @@
 		$id = $_POST['id'];
 		$name = $_POST['image_name'];
 		$filename = $_FILES['image']['name'];
+		$conn = $pdo->open();
 		if(!empty($filename)){
+			$stmt = $conn->prepare("SELECT $name FROM invitation WHERE invitation_id=:id");
+			$stmt->execute(['id' => $id]);
+			foreach ($stmt as $row)
+				unlink('../../images/' . $row[$name]);
             $ext = pathinfo($filename, PATHINFO_EXTENSION);
                 $filename=date('Y-m-d').'_'.time().'.'.$ext;
-			move_uploaded_file($_FILES['image']['tmp_name'], '../../images/'.$filename);	
+			move_uploaded_file($_FILES['image']['tmp_name'], '../../images/'.$filename);
+
 		}
 		
-		$conn = $pdo->open();
-
 		try{
 			$stmt = $conn->prepare("UPDATE invitation SET $name=:photo WHERE invitation_id=:id");
 			$stmt->execute(['photo'=>$filename, 'id'=>$id]);
