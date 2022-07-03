@@ -80,8 +80,8 @@
                             $stmt1 = $conn->prepare("SELECT * FROM photographer WHERE photographer_id='$invitation_photographer_id'");
                             $stmt1->execute();
                             foreach ($stmt1 as $row1){
-                              echo "<td><a href='https://api.whatsapp.com/send?phone=91".$row1['photographer_phone']."&amp;text=http://streaminginvitation.com/?love=".$row['invitation_search_name'].";' target='_blank'>";
-                            echo $row1['photographer_name'].' , '.$row1['photographer_phone'].' ( '.$invitation_photographer_id.' ) ';
+                              echo "<td><a href='https://api.whatsapp.com/send?phone=91".$row1['photographer_phone']."&amp;text=http://streaminginvitation.com/?love=".$row['invitation_search_name']."' target='_blank'>";
+                            echo $row1['photographer_name'].' , '.$row1['photographer_phone'].'('.$invitation_photographer_id.')';
                             echo "<i class='fa fa-whatsapp'></i></a></td>";
                             }
                             echo "<td><a href='../../index.php?love=".$row['invitation_search_name']."' target='_blank'>" . $row['invitation_name1'] . ' , ' . $row['invitation_name2'] . "</a></td>";
