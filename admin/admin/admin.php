@@ -15,7 +15,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li>Mannage</li>
+        <li>LOGIN'S</li>
         <li class="active">Admin</li>
       </ol>
     </section>
@@ -182,6 +182,7 @@ function getRow(id){
   });
 }
 </script>
+
 </body>
 <?php } ?>
 <?php include '../includes/req_end.php'; ?>

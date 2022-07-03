@@ -60,10 +60,10 @@
                       <thead>
                         <th>ID</th>
                         <th>PGR ID</th>
-                        <th>Names</th>
-                        <th>Code</th>
-                        <th>Password</th>
-                        <th>Tools</th>
+                        <th>NAME</th>
+                        <th>CODE</th>
+                        <th>PASSWORD</th>
+                        <th>TOOLS</th>
                       </thead>
                       <tbody>
                         <?php
@@ -80,7 +80,7 @@
                             $stmt1 = $conn->prepare("SELECT * FROM photographer WHERE photographer_id='$invitation_photographer_id'");
                             $stmt1->execute();
                             foreach ($stmt1 as $row1){
-                              echo "<td><a href='https://api.whatsapp.com/send?phone=91".$row1['photographer_phone']."&amp;text=?love=".$row['invitation_search_name'].";' target='_blank'>";
+                              echo "<td><a href='https://api.whatsapp.com/send?phone=91".$row1['photographer_phone']."&amp;text=http://streaminginvitation.com/?love=".$row['invitation_search_name'].";' target='_blank'>";
                             echo $row1['photographer_name'].' , '.$row1['photographer_phone'].' ( '.$invitation_photographer_id.' ) ';
                             echo "<i class='fa fa-whatsapp'></i></a></td>";
                             }

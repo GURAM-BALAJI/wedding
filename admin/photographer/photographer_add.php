@@ -10,6 +10,7 @@ if ($req_per == 1) {
 		$address = $_POST['address'];
 		$address_map = $_POST['map'];
 		$website = $_POST['website'];
+		$by=$admin['admin_id'];
 		$conn = $pdo->open();
 
 		$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM photographer WHERE photographer_name=:name AND photographer_deleted='0'");
@@ -28,8 +29,8 @@ if ($req_per == 1) {
 					move_uploaded_file($_FILES['banner']['tmp_name'], '../../photographer_posters/' . $filename);
 				}
 				$today = date('d-m-Y h:i:s a');
-				$stmt = $conn->prepare("INSERT INTO photographer (photographer_name,photographer_banner,photographer_email,photographer_phone,photographer_address,photographer_address_map,photographer_website,photographer_updated_date,photographer_created_date) VALUES (:photographer_name,:photographer_banner,:photographer_email,:photographer_phone,:photographer_address,:photographer_address_map,:photographer_website,:photographer_updated_date,:photographer_created_date)");
-				$stmt->execute(['photographer_name' => $name, 'photographer_banner' => $filename, 'photographer_email' => $email, 'photographer_phone' => $phone, 'photographer_address' => $address, 'photographer_address_map' => $address_map, 'photographer_website' => $website, 'photographer_updated_date' => $today, 'photographer_created_date' => $today]);
+				$stmt = $conn->prepare("INSERT INTO photographer (photographer_name,photographer_banner,photographer_email,photographer_phone,photographer_address,photographer_address_map,photographer_website,photographer_updated_date,photographer_created_date,photographer_added_by) VALUES (:photographer_name,:photographer_banner,:photographer_email,:photographer_phone,:photographer_address,:photographer_address_map,:photographer_website,:photographer_updated_date,:photographer_created_date,:photographer_added_by)");
+				$stmt->execute(['photographer_name' => $name, 'photographer_banner' => $filename, 'photographer_email' => $email, 'photographer_phone' => $phone, 'photographer_address' => $address, 'photographer_address_map' => $address_map, 'photographer_website' => $website, 'photographer_updated_date' => $today, 'photographer_created_date' => $today,'photographer_added_by'=>$by]);
 				$_SESSION['success'] = 'photographer added successfully';
 			} catch (PDOException $e) {
 				$_SESSION['error'] = $e->getMessage();

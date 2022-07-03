@@ -82,13 +82,14 @@
                     <td> </td>
                 </tr>
 
+            
                 <tr>
                     <td> </td>
-                    <td> Contact </td>
-                    <td style="text-align: center;"> <input type="checkbox" name="contact_view" <?php if ($row['contact_view']) echo "checked"; ?>> </td>
-                    <td style="text-align: center;"> </td>
-                    <td style="text-align: center;"> <input type="checkbox" name="contact_edit" <?php if ($row['contact_edit']) echo "checked"; ?>> </td>
-                    <td style="text-align: center;"></td>
+                    <td> Call Logs </td>
+                    <td style="text-align: center;"> <input type="checkbox" name="call_logs_view" <?php if ($row['call_logs_view']) echo "checked"; ?>> </td>
+                    <td style="text-align: center;"> <input type="checkbox" name="call_logs_create" <?php if ($row['call_logs_create']) echo "checked"; ?>> </td>
+                    <td style="text-align: center;"> <input type="checkbox" name="call_logs_edit" <?php if ($row['call_logs_edit']) echo "checked"; ?>> </td>
+                    <td style="text-align: center;"> <input type="checkbox" name="call_logs_del" <?php if ($row['call_logs_del']) echo "checked"; ?>> </td>
                     <td> </td>
                     <td> </td>
                 </tr>

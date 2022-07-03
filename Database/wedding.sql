@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2022 at 08:02 AM
+-- Generation Time: Jul 03, 2022 at 04:52 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.1.30
 
@@ -48,9 +48,11 @@ CREATE TABLE `admin` (
   `photographer_create` tinyint(1) NOT NULL,
   `photographer_edit` tinyint(1) NOT NULL,
   `photographer_del` tinyint(1) NOT NULL,
+  `call_logs_view` tinyint(1) NOT NULL,
+  `call_logs_create` tinyint(1) NOT NULL,
+  `call_logs_edit` tinyint(1) NOT NULL,
+  `call_logs_del` tinyint(1) NOT NULL,
   `admin_special` tinyint(1) NOT NULL,
-  `contact_view` tinyint(1) NOT NULL,
-  `contact_edit` tinyint(1) NOT NULL,
   `admin_delete` tinyint(1) NOT NULL,
   `admin_added_date` varchar(50) NOT NULL,
   `admin_updated_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
@@ -61,23 +63,25 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`admin_id`, `admin_email`, `admin_password`, `admin_name`, `admin_phone`, `admin_photo`, `admin_status`, `invitation_view`, `invitation_create`, `invitation_edit`, `invitation_del`, `admin_view`, `admin_create`, `admin_edit`, `admin_del`, `photographer_view`, `photographer_create`, `photographer_edit`, `photographer_del`, `admin_special`, `contact_view`, `contact_edit`, `admin_delete`, `admin_added_date`, `admin_updated_date`, `admin_req`) VALUES
-(6, 'admin@admin.com', '$2y$10$tlJ7HiO6SfJcqzd0sztEgePf0Pl1GNHxcxkv36kppNjnesT8og7M.', 'wedding', 12345678, '', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '18-11-2021 11:13:30 pm', '2022-06-18 17:10:11', 0);
+INSERT INTO `admin` (`admin_id`, `admin_email`, `admin_password`, `admin_name`, `admin_phone`, `admin_photo`, `admin_status`, `invitation_view`, `invitation_create`, `invitation_edit`, `invitation_del`, `admin_view`, `admin_create`, `admin_edit`, `admin_del`, `photographer_view`, `photographer_create`, `photographer_edit`, `photographer_del`, `call_logs_view`, `call_logs_create`, `call_logs_edit`, `call_logs_del`, `admin_special`, `admin_delete`, `admin_added_date`, `admin_updated_date`, `admin_req`) VALUES
+(6, 'admin@admin.com', '$2y$10$tlJ7HiO6SfJcqzd0sztEgePf0Pl1GNHxcxkv36kppNjnesT8og7M.', 'wedding', 12345678, '2022-07-02_1656776593.png', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '18-11-2021 11:13:30 pm', '2022-07-03 14:27:23', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact`
+-- Table structure for table `call_logs`
 --
 
-CREATE TABLE `contact` (
-  `contact_id` bigint(20) NOT NULL,
-  `contact_name` varchar(2000) NOT NULL,
-  `contact_email` varchar(2000) NOT NULL,
-  `contact_phone` varchar(100) NOT NULL,
-  `contact_country` varchar(200) NOT NULL,
-  `contact_subject` varchar(20000) NOT NULL,
-  `contact_view` tinyint(1) NOT NULL
+CREATE TABLE `call_logs` (
+  `call_logs_id` bigint(20) NOT NULL,
+  `call_logs_name` varchar(1000) NOT NULL,
+  `call_logs_phone` bigint(20) NOT NULL,
+  `call_logs_remark` varchar(2000) NOT NULL,
+  `call_logs_updated_date` varchar(20) NOT NULL,
+  `call_logs_created_date` varchar(20) NOT NULL,
+  `call_logs_date` varchar(10) NOT NULL,
+  `call_logs_by` bigint(20) NOT NULL,
+  `call_logs_deleted` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -116,6 +120,7 @@ CREATE TABLE `invitation` (
   `invitation_streaming_password` varchar(100) NOT NULL,
   `invitation_updated_date` varchar(50) NOT NULL,
   `invitation_created_date` varchar(50) NOT NULL,
+  `invitation_added_by` bigint(20) NOT NULL,
   `invitation_deleted` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -136,7 +141,8 @@ CREATE TABLE `photographer` (
   `photographer_website` varchar(100) NOT NULL,
   `photographer_updated_date` varchar(50) NOT NULL,
   `photographer_created_date` varchar(50) NOT NULL,
-  `photographer_deleted` set('0','1') NOT NULL DEFAULT '0'
+  `photographer_deleted` set('0','1') NOT NULL DEFAULT '0',
+  `photographer_added_by` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -150,10 +156,10 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `contact`
+-- Indexes for table `call_logs`
 --
-ALTER TABLE `contact`
-  ADD PRIMARY KEY (`contact_id`);
+ALTER TABLE `call_logs`
+  ADD PRIMARY KEY (`call_logs_id`);
 
 --
 -- Indexes for table `invitation`
@@ -178,10 +184,10 @@ ALTER TABLE `admin`
   MODIFY `admin_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `contact`
+-- AUTO_INCREMENT for table `call_logs`
 --
-ALTER TABLE `contact`
-  MODIFY `contact_id` bigint(20) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `call_logs`
+  MODIFY `call_logs_id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `invitation`

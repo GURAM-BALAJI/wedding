@@ -145,9 +145,14 @@ if (isset($_GET['love'])) {
                             </div>
 
                             <div class="mt-lg-0 mb-lg-4 mb-0 col-lg-5 col-md-10 col-12">
-                                <h2 class="mb-2" data-aos="fade-right" data-aos-delay="300">Hello, we are Gymso</h2>
-                                <p data-aos="fade-up" data-aos-delay="400" style="text-align: justify; text-justify: inter-word;">You are NOT allowed to redistribute this HTML template downloadable ZIP file on any template collection site. You are allowed to use this template for your personal or business websites.</p>
-                                <p data-aos="fade-down" data-aos-delay="500" style="text-align: justify; text-justify: inter-word;">If you have any question regarding contact Tooplate immediately. Thank you.</p>
+                                <h2 class="mb-2" data-aos="fade-right" data-aos-delay="300">We are getting married!</h2>
+                                <p data-aos="fade-up" data-aos-delay="400" style="text-align: justify; text-justify: inter-word;">
+                                You have always been the most integral part of our lives. Let’s together celebrate the relationship 
+                                we share the best through this wedding ceremony! We sincerely invite you to join us with your lovely
+                                 family..
+                            </p>
+                                <p data-aos="fade-down" data-aos-delay="500" style="text-align: justify; text-justify: inter-word;">
+                                 Thank you. Be sure to attend the wedding ceremony on</p>
                                 <div class="container">
                                     <?php $date_time = explode("_", $row['invitation_date_time']); ?>
                                     <div class="display-date" data-aos="fade-top-bottom" data-aos-delay="700">
@@ -277,7 +282,7 @@ if (isset($_GET['love'])) {
 
                                     </div>
 
-                                    <div class="mx-auto mt-4 mt-lg-0 mt-md-0 col-lg-5 col-md-6 col-12">
+                                    <div class="mx-auto mt-4 col-lg-5 col-md-6 col-12">
                                         <div data-aos="fade-up" data-aos-delay="500">
                                             <?php echo $photographer['photographer_address_map']; ?>
                                         </div>
@@ -289,24 +294,20 @@ if (isset($_GET['love'])) {
 
 
                         <!-- FOOTER -->
-                        <footer class="site-footer">
+                        <footer class="site-footer schedule">
                             <div class="container">
                                 <div class="row">
 
                                     <div class="ml-auto col-lg-4 col-md-5">
-                                        <p class="copyright-text">Copyright &copy; 2020 Gymso Fitness Co.
+                                        <p class="copyright-text">Copyright &copy; 2020 7 Soft Solution.
 
-                                            <br>Design: <a href="https://www.tooplate.com">Tooplate</a>
+                                            <br>Design: <a href="https://www.7softsolution.com" style="color: red;">7SoftSolution</a>
                                         </p>
                                     </div>
 
                                     <div class="d-flex justify-content-center mx-auto col-lg-5 col-md-7 col-12">
                                         <p class="mr-4">
-                                            <i class="fa fa-envelope-o mr-1"></i>
-                                            <a href="#">hello@company.co</a>
-                                        </p>
-
-                                        <p><i class="fa fa-phone mr-1"></i> 010-020-0840</p>
+                                        <p><i class="fa fa-phone mr-1"></i>+91 95387-67668</p>
                                     </div>
 
                                 </div>
@@ -345,12 +346,100 @@ if (isset($_GET['love'])) {
                         alert("Copied the text: " + copyText_pass);
                     }
                 </script>
-    <?php    }
+        <?php    }
     } catch (PDOException $e) {
         echo $e->getMessage();
     }
     $pdo->close();
-} ?>
+        ?>
             </body>
 
             </html>
+        <?php
+    } else { ?>
+            <html lang="en">
+
+            <head>
+
+                <title></title>
+
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+                <meta name="description" content="">
+                <meta name="keywords" content="">
+                <meta name="author" content="">
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+                <link rel="stylesheet" href="css/bootstrap.min.css">
+                <link rel="stylesheet" href="css/font-awesome.min.css">
+                <link rel="stylesheet" href="css/aos.css">
+
+                <!-- MAIN CSS -->
+                <link rel="stylesheet" href="css/style.css">
+            </head>
+
+            <body data-spy="scroll" data-target="#navbarNav" data-offset="50">
+
+                <!-- CONTACT -->
+                <section class="schedule section">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="mt-2 ml-auto col-lg-5 col-md-6 col-12">
+                                <h2 class="text-white mb-4 pb-2" data-aos="fade-up" data-aos-delay="200">Feel free to ask anything</h2>
+
+                                <form action="send.php" method="post" class="contact-form webform" data-aos="fade-up" data-aos-delay="400" role="form">
+                                    <input type="text" class="form-control" name="name" placeholder="Name">
+
+                                    <input type="tel" class="form-control" name="phone" placeholder="Phone">
+
+                                    <input type="email" class="form-control" name="email" placeholder="Email">
+
+                                    <textarea class="form-control" rows="5" name="message" placeholder="Message"></textarea>
+
+                                    <button type="submit" class="form-control" id="submit-button" name="submit" style="background-color: red;">Send
+                                        Message</button>
+                                </form>
+                            </div>
+
+                            <div class="mt-2 mx-auto col-lg-5 col-md-6 col-12">
+                                <h2 class="text-white mb-4" data-aos="fade-up" data-aos-delay="500">Where you can <span>find us</span></h2>
+
+                                <p class="text-white" data-aos="fade-up" data-aos-delay="700">
+                                    <i class="fa fa-phone mr-1"></i> +9195387-67668
+                                </p>
+                                <p class="text-white" data-aos="fade-up" data-aos-delay="800">
+                                    <i class="fa fa-envelope-o mr-1"></i>
+                                    <a>support@streaminginvitation.com</a>
+                                <p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- FOOTER -->
+                <footer class="site-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="d-flex justify-content-center mx-auto col-lg-5 col-md-7 col-12">
+                                <p class="mr-4">Copyright &copy; 2022 7 Soft Solution
+                                    <br>Design: <a href="http://www.7softsolution.com" style="color: red;">7SoftSolution.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+                <!-- SCRIPTS -->
+                <script src="js/jquery.min.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+                <script src="js/aos.js"></script>
+                <script src="js/smoothscroll.js"></script>
+                <script src="js/custom.js"></script>
+            </body>
+
+            </html>
+        <?php } ?>

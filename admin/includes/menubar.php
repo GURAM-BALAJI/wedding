@@ -13,45 +13,35 @@
     </div>
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="header">REPORTS</li>
       <li><a href="../home/home.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-      <?php if ($admin['contact_view']) { ?>
-        <li class="header">REQUESTS</li>
-      <?php } ?>
-      <?php if ($admin['contact_view']) { ?>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-phone"></i>
-            <span>Contacts</span> <b style="color:RED;"> <?php
-                                                          foreach ($conn->query('SELECT COUNT(*) FROM contact WHERE contact_view=0') as $row) {
-                                                            if ($row['COUNT(*)'] != 0)
-                                                              echo $row['COUNT(*)'];
-                                                          } ?></b>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="../contact/contact.php"><i class="fa fa-eye-slash"></i> New Contact</a></li>
-            <li><a href="../contact/contact_view.php"><i class="fa fa-eye"></i> Viewed Contact</a></li>
-          </ul>
-        </li>
-      <?php } ?>
-      
+      <?php
+      if ($admin['invitation_view'] || $admin['photographer_view']) { ?>
       <li class="header">MANAGE</li>
-      <?php 
-      if ($admin['admin_view']) { ?>
-        <li><a href="../admin/admin.php"><i class="fa fa-grav"></i> <span>Admin</span></a></li>
       <?php } ?>
-      
-      <?php 
+      <?php
       if ($admin['invitation_view']) { ?>
         <li><a href="../invitation/invitation.php"><i class="fa fa-handshake-o"></i> <span>Invitation</span></a></li>
       <?php } ?>
 
-      <?php 
+      <?php
       if ($admin['photographer_view']) { ?>
         <li><a href="../photographer/photographer.php"><i class="fa fa-camera-retro"></i> <span>Photographer</span></a></li>
+      <?php } ?>
+      <?php
+      if ($admin['call_logs_view']) { ?>
+      <li class="header">CALL LOG'S</li>
+      <?php } ?>
+      <?php
+      if ($admin['call_logs_view']) { ?>
+        <li><a href="../call_logs/call_logs.php"><i class="fa fa-phone-square"></i> <span>Call Logs</span></a></li>
+      <?php } ?>
+      <?php
+      if ($admin['admin_view']) { ?>
+      <li class="header">LOGIN'S</li>
+      <?php } ?>
+      <?php
+      if ($admin['admin_view']) { ?>
+        <li><a href="../admin/admin.php"><i class="fa fa-grav"></i> <span>Admin</span></a></li>
       <?php } ?>
     </ul>
   </section>

@@ -76,6 +76,32 @@ include '../includes/header.php'; ?>
               </div>
             </div>
           <?php } ?>
+
+          <?php if ($admin['call_logs_view']) { ?>
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-gray">
+                <div class="inner">
+                  <?php
+                  date_default_timezone_set('Asia/Kolkata');
+                  $today = date('d-m-Y');
+                  $sql6 = "SELECT * FROM call_logs WHERE call_logs_date='$today'";
+                  $query6 = $conn->prepare($sql6);;
+                  $query6->execute();
+                  $results6 = $query6->fetchAll(PDO::FETCH_OBJ);
+                  $query = $query6->rowCount();
+                  echo "<h3>" . $query . "</h3>";
+                  ?>
+                  <div class="stat-panel-title text-uppercase">Todays Call Logs</div>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-phone"></i>
+                </div>
+                <a href="../call_logs/call_logs.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          <?php } ?>
+
           <?php if ($admin['invitation_view']) { ?>
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
