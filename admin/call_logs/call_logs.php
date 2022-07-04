@@ -73,13 +73,22 @@
                         try {
                           $stmt = $conn->prepare("SELECT * FROM call_logs WHERE call_logs_deleted='0' ORDER BY call_logs_id DESC");
                           $stmt->execute();
-                          $slno=1;
+                          $slno = 1;
+                          $time = strtotime(0);
                           foreach ($stmt as $row) {
+                            $color = "";
+                            if ($admin['call_logs_special']) {
+                              $time = strtotime($row['call_logs_created_date']) - $time;
+                              if ($time > '420')
+                                if ($time != strtotime($row['call_logs_created_date']))
+                                  $color = "red";
+                            }
+                            $time = strtotime($row['call_logs_created_date']);
                             echo "
-                          <tr>";
+                          <tr style='background-color:" . $color . ";'>";
                             echo "<td>" . $slno++ . "</td>";
                             echo "<td>" . $row['call_logs_name'] . "</td>";
-                            echo "<td><a href='https://api.whatsapp.com/send?phone=91".$row['call_logs_phone']."&amp;text=' target='_blank'>" . $row['call_logs_phone'] . " <i class='fa fa-whatsapp'></i></a></td>";
+                            echo "<td><a href='https://api.whatsapp.com/send?phone=91" . $row['call_logs_phone'] . "&amp;text=' target='_blank'>" . $row['call_logs_phone'] . " <i class='fa fa-whatsapp'></i></a></td>";
                             echo "<td>" . $row['call_logs_remark'] . "</td>";
                             echo "<td>" . $row['call_logs_updated_date'] . "</td>";
                             echo "<td>" . $row['call_logs_created_date'] . "</td>";
