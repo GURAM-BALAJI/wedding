@@ -99,7 +99,7 @@ if (isset($_GET['love'])) {
                                         </svg>
                                     </div>
 
-                                    <h6 data-aos="fade-up" data-aos-delay="200">Wedds</h6>
+                                    <h1 data-aos="fade-up" data-aos-delay="200" style="border:0px;margin:0%;" ><b>&#128158;</b></h1>
 
                                     <div class="text" data-aos="fade-left" data-aos-delay="300">
                                         <svg viewbox="0 0 100 20" class="center">
