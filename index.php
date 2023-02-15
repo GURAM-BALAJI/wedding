@@ -99,7 +99,7 @@ if (isset($_GET['love'])) {
                                         </svg>
                                     </div>
 
-                                    <h1 data-aos="fade-up" data-aos-delay="200" style="border:0px;margin:0%;" ><b>&#128158;</b></h1>
+                                    <h6 data-aos="fade-up" data-aos-delay="200">Wedds</h6>
 
                                     <div class="text" data-aos="fade-left" data-aos-delay="300">
                                         <svg viewbox="0 0 100 20" class="center">
@@ -273,7 +273,7 @@ if (isset($_GET['love'])) {
                                 <div class="row">
 
                                     <div class="ml-auto col-lg-5 col-md-6 col-12">
-                                        <h2  data-aos="fade-left" data-aos-delay="600">Contact Us</h2>
+                                        <h2 class="mb-4" data-aos="fade-left" data-aos-delay="600">Contact <span>Us </span></h2>
                                         <p data-aos="fade-down" data-aos-delay="100"><i class="fa fa-phone mr-1"></i> <?php echo $photographer['photographer_phone']; ?></p>
                                         <p data-aos="fade-up" data-aos-delay="400"><i class="fa fa-envelope mr-1"></i> <?php echo $photographer['photographer_email']; ?></p>
                                         <p data-aos="fade-right" data-aos-delay="700"><i class="fa fa-globe mr-1"></i> <?php echo $photographer['photographer_website']; ?></p>
@@ -331,14 +331,19 @@ if (isset($_GET['love'])) {
                 <script>
                     function streaming_id() {
                         /* Get the text field */
-                        var copyText = "<?php echo $row['invitation_streaming_id']; ?>";
-                        alert(copyText);
+                        var copyText = <?php echo $row['invitation_streaming_id']; ?>;
+                        /* Copy the text inside the text field */
+                        navigator.clipboard.writeText(copyText);
+                        /* Alert the copied text */
+                        alert("Copied the text: " + copyText);
                     }
 
                     function streaming_pass() {
                         /* Get the text field */
                         var copyText_pass = "<?php echo $row['invitation_streaming_password']; ?>";
-                        alert(copyText_pass);
+                        navigator.clipboard.writeText(copyText_pass);
+                        /* Alert the copied text */
+                        alert("Copied the text: " + copyText_pass);
                     }
                 </script>
         <?php    }
